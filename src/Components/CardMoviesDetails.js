@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Row , Col  } from 'react-bootstrap'
+import {  Row , Col  } from 'react-bootstrap'
 import {Link , useLocation} from 'react-router-dom'
 const CardMoviesDetails = () => {
  const location = useLocation()
@@ -29,7 +29,7 @@ alt='asced'
 <Col md='12' xs='12' sm='12' >
 <div className="card-story d-flex flex-column align-items-start">
 <div className="text-end p-2">
-  <p className="card-text-title fs-3" style={{fontWeight:'bold'}}>القصة:</p>
+  <p className="card-text-title fs-3 border-bottom" style={{fontWeight:'bold'}}>القصة:</p>
 </div>
 <div className="text-end">
   <p className="card-text-story"> {mov.overview}</p>

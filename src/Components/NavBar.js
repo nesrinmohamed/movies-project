@@ -1,8 +1,21 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import { Container } from 'react-bootstrap'
 import {AiOutlineSearch} from 'react-icons/ai'
+import {useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
-const NavBar = ({search}) => {
+import { getAllMovies , getMovieSearch } from './redux/actions/movieAction'
+const NavBar = () => {
+  const dispatch = useDispatch()
+  useEffect(() =>{
+    dispatch(getAllMovies())
+  }, [])
+  const search = async(word) =>{
+    if(word === ''){
+   dispatch(getAllMovies())
+  }else{
+    dispatch(getMovieSearch(word))
+  }
+  }
     const onSearch = (word) =>{
     search(word)
     }
